@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Welcome, Admin!</h1>
+    <a href="/products/new">Add New Product</a> |
+    <a href="/login">Logout</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.description}"></td>
+                <td th:text="${product.price}"></td>
+                <td>
+                <img th:src="${product.imageUrl}" width="100" alt="Product Image"/>
+                </td>
+                <td>
+                    <a th:href="@{/products/edit/{id}(id=${product.id})}">Edit</a> |
+                    <a th:href="@{/products/delete/{id}(id=${product.id})}"
+                       onclick="return confirm('Are you sure you want to delete this product?');">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

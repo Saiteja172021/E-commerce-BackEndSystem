@@ -1,0 +1,113 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling */
+body {
+    background: #f4f6f9;
+    color: #333;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page title */
+h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form container */
+form {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+input[type="url"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 6px rgba(52,152,219,0.3);
+}
+
+/* Error messages */
+span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #e74c3c;
+}
+
+/* Global error box */
+/* div[th\\:if] p {
+    background: #fdecea;
+    color: #c0392b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+} */
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #27ae60;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #1f8c4d;
+}
+
+/* Back link */
+a[href="/products"] {
+    display: inline-block;
+    margin-top: 15px;
+    color: #3498db;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a[href="/products"]:hover {
+    color: #1d6fa5;
+}

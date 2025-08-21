@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .field-error {
+            color: red;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- Global error for duplicate username/email -->
+<div th:if="${error}" class="error-message" th:text="${error}"></div>
+
+<form th:action="@{/register}" th:object="${user}" method="post">
+    <h2>Register</h2>
+    <div>
+        <label>Username:</label>
+        <input type="text" th:field="*{username}" placeholder="Enter username" required>
+        <div class="field-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" placeholder="Enter email" required>
+        <div class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" placeholder="Enter password" required>
+        <div class="field-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    </div>
+
+    <button type="submit">Register</button>
+<p>Already have an account? <a th:href="@{/login}">Login</a></p>
+</form>
+
+
+</body>
+</html>

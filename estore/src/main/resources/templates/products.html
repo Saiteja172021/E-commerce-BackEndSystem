@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Products</title>
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+    <h1>Available Products</h1>
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Order</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.description}"></td>
+            <td>
+                <img th:src="${product.imageUrl}" width="100" alt="Product Image"/>
+                </td>
+            <td>
+                <form th:action="@{'/user/cart/add/' + ${product.id}}" method="post">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="/user/cart">View Cart</a>
+    <a href="/user/logout">Logout</a>
+</body>
+</html>

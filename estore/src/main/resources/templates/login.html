@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<form th:action="@{/login}" method="post">
+    <h2>Login</h2>
+    <label>Username:</label>
+    <input type="text" name="username" required>
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required>
+    <br><br>
+
+    <!-- Hidden field to store role type -->
+    <input type="hidden" name="loginType" id="loginType">
+
+    <!-- Two different login buttons -->
+    <button type="submit" onclick="document.getElementById('loginType').value='admin'">Login as Admin</button>
+    <button type="submit" onclick="document.getElementById('loginType').value='user'">Login as User</button>
+    <!-- New User Register button -->
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/register" class="register-btn">New User? Register</a>
+</div>
+</form>
+
+</body>
+</html>

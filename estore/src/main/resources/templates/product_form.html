@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.id != null} ? 'Edit Product' : 'Add Product'"></title>
+    <link rel="stylesheet" href="/css/product_form.css">
+</head>
+<body>
+<h1 th:text="${product.id != null} ? 'Edit Product' : 'Add New Product'"></h1>
+
+<form th:action="@{/products/save}" th:object="${product}" method="post">
+
+    <!-- Hidden ID for updates -->
+    <input type="hidden" th:field="*{id}" />
+
+    <div th:if="${#fields.hasGlobalErrors()}">
+        <p th:each="err : ${#fields.globalErrors()}" th:text="${err.defaultMessage}"></p>
+    </div>
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required />
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    <label>Description:</label>
+    <input type="text" th:field="*{description}" required />
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+
+    <label>Price:</label>
+    <input type="number" th:field="*{price}" min="0" required />
+    <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+
+    <label>Quantity:</label>
+    <input type="number" th:field="*{quantity}" min="0" required />
+    <span th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></span>
+
+    <label>Image URL:</label>
+    <input type="url" th:field="*{imageUrl}" required />
+    <span th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"></span>
+
+    <button type="submit">Save</button>
+</form>
+
+<br>
+<a href="/products">Back to Product List</a>
+</body>
+</html>

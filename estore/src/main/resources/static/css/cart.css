@@ -1,0 +1,90 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+body {
+    background: #f4f6f9;
+    color: #333;
+    padding: 30px;
+}
+
+/* Page title */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Cart table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto 20px auto;
+    max-width: 800px;
+}
+
+/* Table header */
+th {
+    background: #2c3e50;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table cells */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Row hover effect */
+tbody tr:hover {
+    background: #f9fbfd;
+}
+
+/* Continue shopping button */
+a[href="/products"] {
+    display: inline-block;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+/* Continue order button */
+a[href="/user/order"] {
+    display: inline-block;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+a[href="/products"]:hover {
+    background: #217dbb;
+}
